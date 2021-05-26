@@ -1,0 +1,42 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'pl.mimuw.jnp2'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def camelVersion = '3.9.0'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.apache.camel.springboot:camel-spring-boot-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-servlet-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-weather-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-mail-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-rest-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-stream-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-github-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-zipfile-starter:$camelVersion"
+    implementation "org.apache.camel.springboot:camel-http-starter:$camelVersion"
+
+
+    implementation "org.apache.camel:camel-bom:$camelVersion"
+    implementation "org.apache.camel:camel-mail:$camelVersion"
+    implementation "org.apache.camel:camel-core:$camelVersion"
+    implementation "org.apache.camel:camel-jackson:$camelVersion"
+    implementation "com.google.guava:guava:23.0"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+
+
+test {
+    useJUnitPlatform()
+}
